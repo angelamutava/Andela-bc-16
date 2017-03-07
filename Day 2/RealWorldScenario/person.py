@@ -17,6 +17,10 @@ class Student(Person):
     def enrol(self, course):
         self.classes.append(course)
 
+    def check_enrolled(self):
+        for courses in self.classes:
+            print courses    
+
 
 class StaffMember(Person):
     """This class inherits from person and checks employment type"""
@@ -40,6 +44,10 @@ class Lecturer(StaffMember):
 
     def assign_teaching(self, course):
         self.courses_taught.append(course)
+
+    def courses_teaching(self):
+        for courses in self.courses_taught:
+            print courses    
 
 
 john = Student("John", "Doe", "xyzthf")

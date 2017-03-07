@@ -28,4 +28,4 @@ class PersonTest(unittest.TestCase):
         """testing whether the object for lecturer is able to call the method for test employment """
         angie = Lecturer("permanent", "Angela", "Mutava")
         angie.is_permanent()
-self.assertEqual(angie.is_permanent(), True)
+        self.assertEqual(angie.is_permanent(), True)
