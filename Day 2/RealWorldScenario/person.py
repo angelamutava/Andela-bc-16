@@ -1,14 +1,14 @@
 class Person:
 
     """This class declares the basic attributes every person has"""
-    def __init__(self, name, surname, allowance):
+    def __init__(self, name, surname):
         self.name = name
         self.surname = surname
-        self.allowance = allowance
+        
 
     def allowance_allowed(self, amount):
-        self.allowance = self.amount * 0.5   
-        
+        self.amount = self.amount * 0.5   
+        return self.amount + amount
 
 
 class Student(Person):
@@ -22,12 +22,13 @@ class Student(Person):
         self.classes.append(course)
 
 
-     def allowance_allowed(self, amount):
-        self.allowance = self.amount * 0.75    
+    def allowance_allowed(self, amount):
+        self.amount = amount * 0.75
+        return self.amount + amount    
 
     def check_enrolled(self):
         for courses in self.classes:
-            print courses    
+            print (courses)    
 
 
 
@@ -44,7 +45,8 @@ class StaffMember(Person):
         return False
 
     def allowance_allowed(self, amount):
-        self.allowance = self.amount * 0.85     
+        self.amount = amount * 0.85
+        return self.amount + amount    
 
 
 class Lecturer(StaffMember):
@@ -59,18 +61,21 @@ class Lecturer(StaffMember):
 
     
     def allowance_allowed(self, amount):
-        self.allowance = self.amount * 0.95  
+        self.mount = amount * 0.95
+        return self.amount + amount
 
 
     def courses_teaching(self):
         for courses in self.courses_taught:
-            print courses    
+            print(courses)    
 
 
 
 john = Student("John", "Doe", "xyzthf")
+print(john.allowance_allowed(1000))
 
 john.enrol("Introduction to computer programming")
 
 angie = Lecturer("Angela", "Mutava", "29695896")
 angie.assign_teaching("Mathematics for dummies")
+print(john.allowance_allowed(19000))
