@@ -21,8 +21,14 @@ class Student(Person):
     def enrol(self, course):
         self.classes.append(course)
 
+
      def allowance_allowed(self, amount):
         self.allowance = self.amount * 0.75    
+
+    def check_enrolled(self):
+        for courses in self.classes:
+            print courses    
+
 
 
 class StaffMember(Person):
@@ -50,9 +56,17 @@ class Lecturer(StaffMember):
 
     def assign_teaching(self, course):
         self.courses_taught.append(course)
+
     
     def allowance_allowed(self, amount):
         self.allowance = self.amount * 0.95  
+
+
+    def courses_teaching(self):
+        for courses in self.courses_taught:
+            print courses    
+
+
 
 john = Student("John", "Doe", "xyzthf")
 

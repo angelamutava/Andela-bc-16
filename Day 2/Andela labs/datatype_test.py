@@ -26,4 +26,4 @@ class data_type_tester(unittest.TestCase):
     self.assertEqual(testcases.data_type(300), 'more than 100')
   
   def test_str_type(self):
-self.assertEqual(testcases.data_type('angela'), 6)
+    self.assertEqual(testcases.data_type('angela'), 6)
